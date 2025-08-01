@@ -36,7 +36,7 @@
 	        content = {
 	          type = "btrfs";
 		  extraArgs = [ "-L" "nixos" "-f"];
-		  postCreateHoom = ''
+		  postCreateHook = ''
 		    mount -t btrfs /dev/disk/by-label/nixos /mnt
 		    btrfs subvolume snapshot -r /mnt /mnt/root-blank
 		    umount /mnt
