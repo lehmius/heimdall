@@ -25,42 +25,44 @@
 	    luks = {
 	      size = "100%";
 	      label = "luks";
-	      name = "enc";
-	      extraOpenArgs = [
-	        "--allow-discards"
-		"--perf-no_read_workqueue"
-		"--perf-no_write_workqueue"
-	      ];
 	      content = {
-	        type = "btrfs";
-		extraArgs = [ "-L" "nixos" "-f"];
-		postCreateHoom = ''
-		  mount -t btrfs /dev/disk/by-label/nixos /mnt
-		  btrfs subvolume snapshot -r /mnt /mnt/root-blank
-		  umount /mnt
-		'';
-		subvolumes = {
-		  "/root" = {
-		    mountpoint = "/";
-		    mountOptions = [ "subvol=root" "compress=zstd" "noatime" ];
+  	        name = "enc";
+	        extraOpenArgs = [
+	          "--allow-discards"
+		  "--perf-no_read_workqueue"
+		  "--perf-no_write_workqueue"
+	        ];
+	        content = {
+	          type = "btrfs";
+		  extraArgs = [ "-L" "nixos" "-f"];
+		  postCreateHoom = ''
+		    mount -t btrfs /dev/disk/by-label/nixos /mnt
+		    btrfs subvolume snapshot -r /mnt /mnt/root-blank
+		    umount /mnt
+		  '';
+		  subvolumes = {
+		    "/root" = {
+		      mountpoint = "/";
+		      mountOptions = [ "subvol=root" "compress=zstd" "noatime" ];
+		    };
+		    "/home" = {
+		      mountpoint = "/home";
+		      mountOptions = [ "subvol=home" "compress=zstd" "noatime" ];
+		    };
+		    "/nix" = {
+		      mountpoint = "/nix";
+		      mountOptions = [ "subvol=nix" "compress=zstd" "noatime" ];
+		    };
+		    "/persist" = {
+		      mountpoint = "/persist";
+		      mountOptions = [ "subvol=persist" "compress=zstd" "noatime" ];
+		    };
+		    "/log" = {
+		      mountpoint = "/var/log";
+		      mountOptions = [ "subvol=log" "compress=zstd" "noatime" ];
+		    };
 		  };
-		  "/home" = {
-		    mountpoint = "/home";
-		    mountOptions = [ "subvol=home" "compress=zstd" "noatime" ];
-		  };
-		  "/nix" = {
-		    mountpoint = "/nix";
-		    mountOptions = [ "subvol=nix" "compress=zstd" "noatime" ];
-		  };
-		  "/persist" = {
-		    mountpoint = "/persist";
-		    mountOptions = [ "subvol=persist" "compress=zstd" "noatime" ];
-		  };
-		  "/log" = {
-		    mountpoint = "/var/log";
-		    mountOptions = [ "subvol=log" "compress=zstd" "noatime" ];
-		  };
-		};
+	        };
 	      };
 	    };
 	  };
