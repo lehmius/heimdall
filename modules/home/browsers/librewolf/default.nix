@@ -17,9 +17,9 @@ in
       "x-scheme-handler/https" = [ "librewolf.desktop" ];
     };
 
-    programe.librewolf = {
+    programs.librewolf = {
       enable = true;
-      profile.default = {
+      profiles.default = {
         name = "Default";
 
 	settings = {

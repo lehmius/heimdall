@@ -17,10 +17,12 @@ in {
     };
     extraGroups = mkOption {
       type = listOf str;
+      default = [ ];
       description = "Groups beyond the default to be assigned to the user";
     };
     extraOptions = mkOption {
-      type = attrsOf anything;
+      type = attrs;
+      default = { };
       description = "Extra options to be passed to users.users.<name>";
     };
   };

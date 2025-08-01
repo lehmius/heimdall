@@ -12,7 +12,7 @@ in
   config = mkIf cfg.enable {
     services.hypridle = {
       enable = true;
-      setting = {
+      settings = {
         general = {
 	  befor_sleep_cmd = "loginctl lock-session";
 	  after_sleep_cmd = "hyprctl dispatch dpms on";

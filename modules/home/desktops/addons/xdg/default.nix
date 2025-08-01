@@ -16,7 +16,7 @@ in
     };
 
     xdg = {
-      eanble = true;
+      enable = true;
       cacheHome = config.home.homeDirectory + "/.loacal/cache";
 
       userDirs = {

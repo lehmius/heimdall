@@ -10,8 +10,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    home-packages = with pkgs; [
-      nixgl nix-output-monitor nvd
+    home.packages = with pkgs; [
+      nix-output-monitor nvd
     ];
 
     systemd.user.startServices = "sd-switch";
@@ -23,9 +23,11 @@ in
     };
 
     nix = {
-      experimental-features = [ "nix-command" "flakes" ];
-      warn-dirty = false;
-      use-xdg-base-directories = true;
+      settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        warn-dirty = false;
+        use-xdg-base-directories = true;
+      };
     };
 
     news = {

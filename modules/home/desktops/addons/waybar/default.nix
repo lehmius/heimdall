@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.desktops.addons.waybar;
@@ -26,7 +26,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    program.waybar = {
+    programs.waybar = {
       enable = true;
       systemd.enable = true;
       settings = [
