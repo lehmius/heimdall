@@ -39,7 +39,7 @@
 		  btrfs subvolume snapshot -r /mnt /mnt/root-blank
 		  umount /mnt
 		'';
-		subvolumes {
+		subvolumes = {
 		  "/root" = {
 		    mountpoint = "/";
 		    mountOptions = [ "subvol=root" "compress=zstd" "noatime" ];
