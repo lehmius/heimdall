@@ -26,6 +26,7 @@
 	      size = "100%";
 	      label = "luks";
 	      content = {
+	        type = "luks";
   	        name = "enc";
 	        extraOpenArgs = [
 	          "--allow-discards"
