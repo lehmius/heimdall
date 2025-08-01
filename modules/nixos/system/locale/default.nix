@@ -1,10 +1,11 @@
 { options, config, lib, ... }:
 with lib;
-with lib.heimdall; let
+with lib.heimdall;
+let
   cfg = config.system.locale;
 in {
   options.system.locale = with types; {
-    enable = mkBoolOpt false "Whether or not to manage locale settings.";
+    enable = mkEnableOption "Whether or not to manage locale settings.";
   };
 
   config = mkIf cfg.enable {

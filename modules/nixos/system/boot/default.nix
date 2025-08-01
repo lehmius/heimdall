@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: 
+with lib;
+with lib.heimdall;
 let
-  inherit (lib) mkIf;
-
   cfg = config.system.boot;
 in {
   options.system.boot = {

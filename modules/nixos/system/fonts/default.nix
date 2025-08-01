@@ -8,7 +8,7 @@ in {
     enable = mkEnableOption "Whether or not to manage fonts.";
     fonts = mkOption {
       type = listOf package;
-      description = "Custom font packages to install."
+      description = "Custom font packages to install.";
     };
   };
 

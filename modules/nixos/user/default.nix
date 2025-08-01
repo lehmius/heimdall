@@ -7,12 +7,13 @@ in {
   options.user = with types; {
     name = mkOption {
       type = str;
-      description = "The name of the user's account"
+      default = "lehmius";
+      description = "The name of the user's account";
     };
     initialPassword = mkOption {
       type = str;
       default = "heimdall";
-      description = "The initial password of the useraccount"
+      description = "The initial password of the useraccount";
     };
     extraGroups = mkOption {
       type = listOf str;

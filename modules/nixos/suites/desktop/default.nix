@@ -25,10 +25,5 @@ in {
     system = {
       boot.plymouth = true;
     };
-
-    user = {
-      name = "lehmius";
-      initialPassword = "heimdall";
-    };
   };
 }

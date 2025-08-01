@@ -1,8 +1,9 @@
+{ config, lib, ... }:
 {
   suites = {
     desktop.enable = true;
   };
-
+  
   heimdall.user = {
     enable = true;
     name = "lehmius";
