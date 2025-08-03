@@ -12,6 +12,10 @@ in {
       networking.enable = true;
     };
 
+    services = {
+      ssh.enable = true;
+    };
+
     system = {
       nix.enable = true;
       boot.enable = true;
