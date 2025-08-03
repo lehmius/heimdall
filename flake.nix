@@ -20,9 +20,17 @@
 	  inputs.nixpkgs.follows = "nixpkgs";
 	};
 
+	nixos-hardware.url = "github:nixos/nixos-hardware"; 
+
 	sops-nix = {
 	  url = "github:Mic92/sops-nix";
 	  inputs.nixpkgs.follows = "nixpkgs";
+	};
+
+	nixos-anywhere = {
+	  url = "github:numtide/nixos-anywhere";
+	  inputs.nixpkgs.follows = "nixpkgs";
+	  inputs.disko.follows = "disko";
 	};
     };
 
@@ -51,6 +59,10 @@
 	    disko.nixosModules.disko
 	    sops-nix.nixosModules.sops
         ];
+
+	systems.hosts.framework.modules = with inputs; [
+	  nixos-hardware.nixosModules.frakework-13-7040-amd
+	];
 
     };
 }
