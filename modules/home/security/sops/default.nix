@@ -15,7 +15,7 @@ in
 
   config = mkIf cfg.enable {
     sops = {
-      defaultSopsFile = ${src}/secrets.yaml;
+      defaultSopsFile = lib.snowfall.get-file "secrets.yaml";
       validateSopsFiles = false;
       age = {
 	sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
