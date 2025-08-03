@@ -1,0 +1,11 @@
+keys:
+  - &users
+    - &lehmius age1tdgx2e4j4gl04xcpzqqt55temc64wyvaaaylj38l78e9n88ztsjqyxp3de
+  - &hosts
+    - &vm age1kqlk27v54qhk3vyy6czp5nqrmkmfdksdayc248zrc4zjp4qare0qcne4e0
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+        - *lehmius
+        - *vm
