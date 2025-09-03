@@ -7,7 +7,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      .systems/workstation/hardware-configuration.nix
     ];
   nixpkgs = {
     overlays = [
