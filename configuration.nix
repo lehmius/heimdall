@@ -7,7 +7,7 @@
 {
   imports =
     [
-      .systems/workstation/hardware-configuration.nix
+      ./systems/workstation/hardware-configuration.nix
     ];
   nixpkgs = {
     overlays = [
@@ -106,6 +106,7 @@
       obsidian
       libresprite
       protonup
+      heroic
     ];
 
   programs.git = {
