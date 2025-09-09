@@ -2,12 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 
 {
   imports =
     [
       ./systems/workstation/hardware-configuration.nix
+      ./nvf.nix
     ];
   nixpkgs = {
     overlays = [
@@ -100,13 +101,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-      neovim 
       librewolf
       anki-bin
       obsidian
       libresprite
       protonup
       heroic
+      libreoffice-qt6-fresh
     ];
 
   programs.git = {
@@ -123,7 +124,6 @@
     enable = true;
     gamescopeSession.enable = true;
   };
-
   programs.gamemode.enable = true;
 
   # Before changing this value read the documentation for this option
