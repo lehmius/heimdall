@@ -5,18 +5,9 @@
 { config, pkgs, inputs, outputs, ... }:
 
 {
-  imports =
-    [
-      ./systems/workstation/hardware-configuration.nix
-    ];
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.stable-packages
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot = {
@@ -27,11 +18,11 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   networking.hostName = "workstation";
   networking.networkmanager.enable = true;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+  };
 
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -47,12 +38,10 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  hardware.graphics.enable = true;
-
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
     videoDrivers = [ "nvidia" ];
     xkb = {
       layout = "us";
@@ -60,6 +49,8 @@
     };
   };
   console.keyMap = "colemak";
+
+  hardware.graphics.enable = true;
 
   hardware.nvidia = {
     modesetting.enable = true;
