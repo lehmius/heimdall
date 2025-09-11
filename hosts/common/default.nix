@@ -5,7 +5,14 @@
   ...
 }: {
   imports = [
+    ./users
+    inputs.home-manager.nixosModules.home-manager
   ];
+
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
 
   nixpkgs = {
     overlays = [
@@ -35,5 +42,6 @@
     registry = 
       (lib.mapAttrs (_: flake: { inherit flake; }))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+    nixPath = [ "/etc/nix/path" ];
   };
 }

@@ -75,14 +75,6 @@
     jack.enable = true;
   };
 
-  users.users.lehmius = {
-    isNormalUser = true;
-    description = "lehmius";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
-  };
-  
   environment.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
