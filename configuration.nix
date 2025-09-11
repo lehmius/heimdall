@@ -11,7 +11,7 @@
     ];
   nixpkgs = {
     overlays = [
-      outputs.overlays.unstable-packages
+      outputs.overlays.stable-packages
     ];
     config = {
       allowUnfree = true;
@@ -100,6 +100,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+      neovim
       librewolf
       anki-bin
       obsidian
