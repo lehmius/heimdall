@@ -8,7 +8,6 @@
   imports =
     [
       ./systems/workstation/hardware-configuration.nix
-      ./nvf.nix
     ];
   nixpkgs = {
     overlays = [
