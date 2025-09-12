@@ -4,6 +4,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./neovim.nix
+  ];
+
   home.username = lib.mkDefault "lehmius";
   home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
 

@@ -52,11 +52,46 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1757487488,
+        "narHash": "sha256-zwE/e7CuPJUWKdvvTCB7iunV4E/+G0lKfv4kk/5Izdg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ab0f3607a6c7486ea22229b92ed2d355f1482ee0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable"
+        "nixpkgs-stable": "nixpkgs-stable",
+        "vimsical": "vimsical"
+      }
+    },
+    "vimsical": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1757703526,
+        "narHash": "sha256-KawTF5aPHDxounuBmN2zIK1FcaOBADgV015y4q7IBgY=",
+        "owner": "lehmius",
+        "repo": "vimsical",
+        "rev": "78402ebe9da1ced3bb76522321c0369818e60469",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lehmius",
+        "repo": "vimsical",
+        "type": "github"
       }
     }
   },
