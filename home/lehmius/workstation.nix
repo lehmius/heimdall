@@ -2,6 +2,6 @@
 {
   imports = [
     ../common
-    common/core
+    ./common/core
   ];
 }

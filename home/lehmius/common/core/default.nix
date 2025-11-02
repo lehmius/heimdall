@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./neovim.nix
+  #  ./neovim.nix
   ];
 
   home.username = lib.mkDefault "lehmius";
@@ -15,10 +15,13 @@
 
   home.packages = with pkgs; [
     nerd-fonts.fira-code
+    signal-desktop
+    blender
+    godot
+    vscode
+    ripgrep
+    bat
   ];
-
-  home.file = {
-  };
 
   home.sessionVariables = {
   };

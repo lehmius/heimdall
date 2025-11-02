@@ -9,8 +9,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    vimsical.url = "github:lehmius/vimsical";
   };
 
   outputs = {

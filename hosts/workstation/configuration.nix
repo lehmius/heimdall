@@ -24,6 +24,19 @@
     enable = true;
   };
 
+#  networking.openconnect.interfaces = {
+#    openconnect0 = {
+#      gateway = "vpn.hrz.tu-darmstadt.de";
+#      protocol = "anyconnect";
+#      user = "fc74fyje";
+#      passwordFile = ./vpn.passwd;
+#      extraOptions = {
+#      	usergroup = "campus";
+#        cafile = ./rootcert.crt;
+#      };
+#    };
+#  };
+
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -88,9 +101,11 @@
       anki-bin
       obsidian
       libresprite
-      protonup
+      protonup-ng
       heroic
       libreoffice-qt6-fresh
+      openconnect
+      networkmanager-openconnect
     ];
 
   programs.git = {
