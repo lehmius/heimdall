@@ -51,10 +51,19 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
   services.xserver = {
     enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        [org.gnome.mutter]
+        experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+      '';
+    };
     videoDrivers = [ "nvidia" ];
     xkb = {
       layout = "us";
