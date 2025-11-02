@@ -51,8 +51,7 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.xserver = {
-    enable = true;
+  services = {
     displayManager.gdm = {
       enable = true;
       wayland = true;
@@ -64,6 +63,9 @@
         experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
       '';
     };
+  };
+  services.xserver = {
+    enable = true;
     videoDrivers = [ "nvidia" ];
     xkb = {
       layout = "us";
