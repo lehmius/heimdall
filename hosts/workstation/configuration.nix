@@ -19,7 +19,12 @@
   };
 
   networking.hostName = "workstation";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
   services.openssh = {
     enable = true;
   };
@@ -38,8 +43,19 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services = {
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        [org.gnome.mutter]
+        experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+      '';
+    };
+  };
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
@@ -88,9 +104,11 @@
       anki-bin
       obsidian
       libresprite
-      protonup
+      protonup-ng
       heroic
       libreoffice-qt6-fresh
+      openconnect
+      networkmanager-openconnect
     ];
 
   programs.git = {
