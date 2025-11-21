@@ -21,6 +21,11 @@
     vscode
     ripgrep
     bat
+    vscode
+    discord
+    brave
+    calibre
+    inkscape
   ];
 
   home.sessionVariables = {

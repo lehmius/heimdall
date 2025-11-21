@@ -19,23 +19,15 @@
   };
 
   networking.hostName = "workstation";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
   services.openssh = {
     enable = true;
   };
-
-#  networking.openconnect.interfaces = {
-#    openconnect0 = {
-#      gateway = "vpn.hrz.tu-darmstadt.de";
-#      protocol = "anyconnect";
-#      user = "fc74fyje";
-#      passwordFile = ./vpn.passwd;
-#      extraOptions = {
-#      	usergroup = "campus";
-#        cafile = ./rootcert.crt;
-#      };
-#    };
-#  };
 
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
