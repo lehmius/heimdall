@@ -109,6 +109,8 @@
       libreoffice-qt6-fresh
       openconnect
       networkmanager-openconnect
+      virt-manager
+      qemu
     ];
 
   programs.git = {
