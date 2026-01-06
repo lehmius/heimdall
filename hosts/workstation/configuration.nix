@@ -120,6 +120,7 @@
       networkmanager-openconnect
       virt-manager
       qemu
+      zed-editor
     ];
 
   programs.git = {
