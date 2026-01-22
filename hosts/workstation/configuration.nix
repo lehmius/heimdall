@@ -121,6 +121,10 @@
       virt-manager
       qemu
       zed-editor
+      nix-ld
+      obs-studio
+      kdePackages.kdenlive
+      zotero
     ];
 
   programs.git = {
@@ -133,6 +137,33 @@
     };
   };
 
+#  programs.zed-editor = {
+#    enable = true;
+#    extensions = [
+#      "nix"
+#      "toml"
+#      "rust"
+#      "c"
+#      "c++"
+#    ];
+#    userSettings = {
+#      assistant = {
+#        enable = false;
+#      };
+#      base_keymap = "VSCode";
+#      lsp = {
+#        rust-analyzer.binary.path_lookup = true;
+#        nix.binary.path_lookup = true;
+#      };
+#      hour_format = "hour24";
+#      theme = {
+#        mode = "dark";
+#        dark = "One Dark";
+#      };
+#      vim_mode = true;
+#    };
+#  };
+  
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
