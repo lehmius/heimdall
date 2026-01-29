@@ -103,7 +103,7 @@
   environment.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-    STEAM_EXTRA_COMPAT_TOOLS_PATH = 
+    STEAM_EXTRA_COMPAT_TOOLS_PATH =
       "/home/lehmius/.steam/root/compatibilitytools.d";
   };
 
@@ -125,6 +125,7 @@
       obs-studio
       kdePackages.kdenlive
       zotero
+      direnv
     ];
 
   programs.git = {
@@ -163,7 +164,7 @@
 #      vim_mode = true;
 #    };
 #  };
-  
+
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;

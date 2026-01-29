@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-  #  ./neovim.nix
+    direnv.nix
   ];
 
   home.username = lib.mkDefault "lehmius";
