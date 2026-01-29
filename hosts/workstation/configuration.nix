@@ -123,7 +123,6 @@
       zed-editor
       nix-ld
       obs-studio
-      kdePackages.kdenlive
       zotero
       direnv
     ];

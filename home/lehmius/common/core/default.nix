@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    direnv.nix
+    ./direnv.nix
   ];
 
   home.username = lib.mkDefault "lehmius";
