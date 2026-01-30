@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.homeManager.minimal = args: {
+  flake.modules.homeManager.core = args: {
     programs.home-manager.enable = true;
     systemd.user.startServices = "sd-switch";
   };

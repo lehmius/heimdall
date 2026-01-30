@@ -5,10 +5,10 @@
     meta.users.lehmius = {
       name = "Felix Clajus";
       username = "lehmius";
-      email = "lehmius@clajus.eu";
     };
 
     modules.nixos.lehmius = {
+
       users.users.lehmius = {
         isNormalUser = true;
         description = "lehmius";
@@ -26,14 +26,7 @@
       };
 
       home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
-        (
-          { osConfig, ... }:
-          {
-            home.stateVersion = osConfig.system.stateVersion;
-          }
-        )
-        minimal
-        programming
+        core
         lehmius
       ];
     };
@@ -41,11 +34,12 @@
     modules.homeManager.lehmius = { pkgs, ... }:
     {
       imports = [
-        config.flake.modules.homeManager.minimal
+        config.flake.modules.homeManager.core
       ];
       home = {
         username = config.flake.meta.users.lehmius.username;
         homeDirectory = "/home/${config.flake.meta.users.lehmius.username}";
+        stateVersion = "25.05";
         packages = with pkgs; [
           nerd-fonts.fira-code
           signal-desktop
