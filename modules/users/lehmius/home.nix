@@ -26,7 +26,7 @@
       };
 
       home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
-        core
+        minimal
         lehmius
       ];
     };
@@ -34,7 +34,7 @@
     modules.homeManager.lehmius = { pkgs, ... }:
     {
       imports = [
-        config.flake.modules.homeManager.core
+        config.flake.modules.homeManager.minimal
       ];
       home = {
         username = config.flake.meta.users.lehmius.username;

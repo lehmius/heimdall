@@ -1,7 +1,7 @@
 { config, inputs, ... }:
 {
   flake.modules.nixos = {
-    core = {
+    minimal = {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
       home-manager = {
         useGlobalPkgs = true;

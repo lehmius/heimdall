@@ -7,7 +7,7 @@
   { lib, pkgs, ... }:
   {
     imports = with config.flake.modules.nixos; [
-      core
+      minimal
       lehmius
     ];
 
