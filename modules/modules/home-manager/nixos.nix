@@ -4,7 +4,7 @@
     core = {
       imports = [ inputs.home-manager.nixosModules.home-manager ];
       home-manager = {
-        uesGlobalPkgs = true;
+        useGlobalPkgs = true;
         extraSpecialArgs.hasGlobalPkgs = true;
       };
     };

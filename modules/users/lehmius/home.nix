@@ -1,12 +1,14 @@
-{ inputs, config, pkgs, ... }:
+{ config, ...}:
 {
-  flake = {
+  flake =
+  {
     meta.users.lehmius = {
       name = "Felix Clajus";
       username = "lehmius";
     };
 
     modules.nixos.lehmius = {
+
       users.users.lehmius = {
         isNormalUser = true;
         description = "lehmius";
@@ -23,12 +25,14 @@
         ];
       };
 
-      home-manager.users.${config.flake.meta.users.lehmius.username}.imports = [
-        config.flake.modules.homeManager.core
+      home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
+        core
+        lehmius
       ];
     };
 
-    modules.homeManager.lehmius = {
+    modules.homeManager.lehmius = { pkgs, ... }:
+    {
       imports = [
         config.flake.modules.homeManager.core
       ];
