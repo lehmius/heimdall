@@ -6,11 +6,6 @@
   configurations.nixos.tardis.module =
   { lib, pkgs, ... }:
   {
-    imports = with config.flake.modules.nixos; [
-      core
-      lehmius
-    ];
-
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -18,7 +13,6 @@
     # Use latest kernel.
     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
-    networking.hostName = "tardis";
     networking.networkmanager.enable = true;
     services.openssh.enable = true;
 
@@ -83,17 +77,6 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-
     environment.sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
@@ -113,7 +96,6 @@
       obsidian
       libresprite
       protonup-ng
-      heroic
       libreoffice-qt6-fresh
       openconnect
       networkmanager-openconnect
@@ -125,16 +107,6 @@
       zotero
       direnv
     ];
-
-    programs.git = {
-      enable = true;
-      config = {
-        init.defaultBranch = "master";
-        url."https://github.com/".insteadOf = [
-          "github:"
-        ];
-      };
-    };
 
     programs.steam = {
       enable = true;
@@ -156,7 +128,5 @@
       };
       optimise.automatic = true;
     };
-
-    system.stateVersion = "25.05";
   };
 }
