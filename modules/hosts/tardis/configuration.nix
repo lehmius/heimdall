@@ -19,7 +19,12 @@
     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
     networking.hostName = "tardis";
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
+    };
     services.openssh.enable = true;
 
     time.timeZone = "Europe/Berlin";
@@ -53,7 +58,7 @@
         enable = true;
         extraGSettingsOverrides = ''
           [org.gnome.mutter]
-          experimental-features=['scale-monitor-framebuffer']
+          experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
         '';
       };
     };
