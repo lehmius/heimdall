@@ -1,6 +1,15 @@
 {
   description = "My NixOS configuration heimdall";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://cuda-maintainers.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
+  };
+
   inputs = {
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -19,38 +28,4 @@
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
- #  outputs = {
- #    self,
- #    home-manager,
- #    nixpkgs,
- #    ...
- #    } @ inputs: let
- #      inherit (self) outputs;
- #      systems = [
- #        "x86_64-linux"
- #      ];
- #      forAllSystems = nixpkgs.lib.genAttrs systems;
- #    in
- #    {
- #      packages =
- #        forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
- #      overlays = import ./overlays { inherit inputs; };
- #      nixosConfigurations = {
- #        workstation = nixpkgs.lib.nixosSystem {
- #          specialArgs = { inherit inputs outputs; };
-	#   modules = [
-	#     ./hosts/workstation
-	#   ];
- #        };
- #      };
- #      homeConfigurations = {
- #        "lehmius@workstation" = home-manager.lib.homeManagerConfiguration {
-	#   pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	#   extraSpecialArgs = { inherit inputs outputs; };
-	#   modules = [
-	#     ./home/lehmius/workstation.nix
-	#   ];
-	# };
- #      };
- #    };
 }

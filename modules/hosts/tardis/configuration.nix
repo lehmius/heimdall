@@ -8,6 +8,7 @@
   {
     imports = with config.flake.modules.nixos; [
       minimal
+      ai
       lehmius
     ];
 
