@@ -8,7 +8,6 @@
     };
 
     modules.nixos.lehmius = {
-
       users.users.lehmius = {
         isNormalUser = true;
         description = "lehmius";
@@ -24,6 +23,8 @@
           "qemu-libvirtd"
         ];
       };
+
+      nix.settings.trusted-users = [ "lehmius" ];
 
       home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
         minimal
