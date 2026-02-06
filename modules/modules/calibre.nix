@@ -1,7 +1,7 @@
 { config, ... }:
 {
   config.flake.modules = {
-    nixos.caibre = {
+    nixos.calibre = {
       services.udisks2 = {
         enable = true;
         mountOnMedia = true;

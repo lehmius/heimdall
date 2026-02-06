@@ -7,7 +7,7 @@
         art
         programming
       ];
-      environment.systemPackager = with pkgs; [
+      environment.systemPackages = with pkgs; [
         godot
       ];
     };
