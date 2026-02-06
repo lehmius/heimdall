@@ -104,21 +104,6 @@
       };
     };
 
-    nix = {
-      settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        trusted-users = [
-          "root"
-          "lehmius"
-        ];
-      };
-      gc = {
-        automatic = true;
-        options = "--delete-older-than 30d";
-      };
-      optimise.automatic = true;
-    };
-
     system.stateVersion = "25.05";
   };
 }
