@@ -5,6 +5,7 @@
     meta.users.lehmius = {
       name = "Felix Clajus";
       username = "lehmius";
+      email = "lehmius@clajus.eu";
     };
 
     modules.nixos.lehmius = {
@@ -44,16 +45,9 @@
         packages = with pkgs; [
           nerd-fonts.fira-code
           signal-desktop
-          blender
-          godot
-          vscode
-          ripgrep
-          bat
-          vscode
           discord
           brave
           calibre
-          inkscape
         ];
       };
     };
