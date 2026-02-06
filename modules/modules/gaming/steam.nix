@@ -1,12 +1,12 @@
 { config, ... }:
 {
-  flake.modules.home-manager.gaming.steam = { pkgs, ... }:
+  flake.modules.nixos.steam = { pkgs, ... }:
   {
-    home.sessionVariables = {
+    environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATH =
         "/home/lehmius/.steam/root/compatibilitytools.d";
     };
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       protonup-ng
     ];
     programs.steam = {

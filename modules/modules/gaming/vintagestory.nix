@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.nixos.gaming.vintagestory = { pkgs, ... }:
+  flake.modules.nixos.vintagestory = { pkgs, ... }:
   {
     services.flatpak.enable = true;
     systemd.services.flatpak-repo = {

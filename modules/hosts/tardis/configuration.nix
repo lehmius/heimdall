@@ -9,6 +9,7 @@
     imports = with config.flake.modules.nixos; [
       minimal
       ai
+      gaming
       lehmius
     ];
 
@@ -103,8 +104,6 @@
     environment.sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
-      STEAM_EXTRA_COMPAT_TOOLS_PATH =
-        "/home/lehmius/.steam/root/compatibilitytools.d";
     };
 
     # Allow unfree packages
@@ -119,7 +118,6 @@
       obsidian
       libresprite
       protonup-ng
-      heroic
       libreoffice-qt6-fresh
       openconnect
       networkmanager-openconnect
@@ -141,12 +139,6 @@
         ];
       };
     };
-
-    programs.steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    programs.gamemode.enable = true;
 
     nix = {
       settings = {
