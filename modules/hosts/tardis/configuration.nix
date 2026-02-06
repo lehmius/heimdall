@@ -80,18 +80,14 @@
       librewolf
       anki-bin
       obsidian
-      libresprite
-      protonup-ng
       libreoffice-qt6-fresh
       openconnect
       networkmanager-openconnect
       virt-manager
       qemu
-      zed-editor
       nix-ld
       obs-studio
       zotero
-      direnv
     ];
 
     system.stateVersion = "25.05";
