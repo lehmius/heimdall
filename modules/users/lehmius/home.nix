@@ -29,6 +29,7 @@
 
       home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
         minimal
+        programming
         lehmius
       ];
     };
