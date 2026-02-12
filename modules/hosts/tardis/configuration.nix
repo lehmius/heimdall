@@ -10,6 +10,7 @@
       pc
       ai
       gaming
+      programming
       lehmius
     ];
 
@@ -76,6 +77,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+      brave
       neovim
       librewolf
       anki-bin
