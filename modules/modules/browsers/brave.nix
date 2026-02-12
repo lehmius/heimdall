@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  config.flake.modules.nixos.browsers.brave = { pkgs, ... }:
+  config.flake.modules.nixos.brave = { pkgs, ... }:
   {
     environment.systemPackages = with pkgs; [
       brave
