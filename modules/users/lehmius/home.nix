@@ -14,7 +14,6 @@
         nerd-fonts.fira-code
         signal-desktop
         discord
-        brave
         calibre
       ];
     };
