@@ -79,6 +79,7 @@
     environment.systemPackages = with pkgs; [
       ausweisapp
       brave
+      davinci-resolve
       neovim
       librewolf
       anki-bin
