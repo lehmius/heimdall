@@ -6,6 +6,7 @@
       minimal
       programming
       wezterm
+      brave
     ];
     home = {
       username = config.flake.meta.users.lehmius.username;
