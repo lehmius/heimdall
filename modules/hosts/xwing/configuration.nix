@@ -29,6 +29,7 @@
     services = {
       displayManager.gdm = {
           enable = true;
+          wayland = true;
       };
       desktopManager.gnome = {
           enable = true;
@@ -40,8 +41,6 @@
     };
 
     services.printing.enable = true;
-    nixpkgs.config.allowUnfree = true;
-
     environment.systemPackages = with pkgs; [
         neovim
         git

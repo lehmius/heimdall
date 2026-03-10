@@ -4,7 +4,7 @@
   options.nixpkgs = {
     config = {
       allowUnfreePredicate = lib.mkOption {
-        type = lib.types.functionTo lib.types.bootl;
+        type = lib.types.functionTo lib.types.bool;
         default = _: false;
       };
       allowUnfreePackages = lib.mkOption {
@@ -27,11 +27,11 @@
       };
     };
 
-    # flake.modules.nixos.minimal = nixosArgs: {
-    #   nixpkgs = {
-    #     pgks = ;
-    #     hostPlatform = ;
-    #   };
-    # };
-  };
+    flake.modules.nixos.minimal = nixosArgs: {
+      nixpkgs = {
+        pkgs = withSystem nixosArgs.config.hardware.facter.report.system (psArgs: psArgs.pkgs);
+        hostPlatform = nixosArgs.config.hardware.facter.report.system;
+      };
+    };
+};
 }

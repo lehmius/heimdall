@@ -13,7 +13,6 @@
       packages = with pkgs; [
         nerd-fonts.fira-code
         signal-desktop
-        discord
         calibre
       ];
     };
