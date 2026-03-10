@@ -45,7 +45,6 @@
         neovim
         git
         librewolf
-        obsidian
         signal-desktop
         anki-bin
     ];
