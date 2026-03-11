@@ -25,6 +25,7 @@
         variant = "colemak";
       };
     };
+    console.keyMap = "colemak";
 
     services = {
       displayManager.gdm = {
