@@ -11,9 +11,10 @@
         zed-editor
       ];
       home.packages = with pkgs; [
-        ripgrep
         bat
+        fd
         fzf
+        ripgrep
       ];
     };
   };
