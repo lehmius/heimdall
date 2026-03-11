@@ -14,6 +14,7 @@
         nerd-fonts.fira-code
         signal-desktop
         calibre
+        mangowc
       ];
     };
   };

@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mangowc = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
