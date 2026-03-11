@@ -46,6 +46,7 @@
         git
         librewolf
         signal-desktop
+        swaybg
         anki-bin
     ];
 

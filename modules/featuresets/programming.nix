@@ -15,6 +15,7 @@
         fd
         fzf
         ripgrep
+        wl-clipboard
       ];
     };
   };

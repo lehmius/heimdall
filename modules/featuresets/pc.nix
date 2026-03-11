@@ -8,6 +8,8 @@
       ];
       environment.systemPackages = with pkgs; [
         ghostty
+        grim
+        slurp
       ];
     };
     homeManager.pc.imports = with config.flake.modules.homeManager; [
