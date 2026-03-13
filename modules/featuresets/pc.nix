@@ -6,12 +6,11 @@
       imports = with config.flake.modules.nixos; [
         minimal
         audio
+        screenshots
       ];
       environment.systemPackages = with pkgs; [
         ghostty
-        grim
         obsidian
-        slurp
       ];
     };
     homeManager.pc.imports = with config.flake.modules.homeManager; [
