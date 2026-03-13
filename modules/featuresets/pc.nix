@@ -8,7 +8,6 @@
         audio
       ];
       environment.systemPackages = with pkgs; [
-        ghostty
         obsidian
       ];
     };
