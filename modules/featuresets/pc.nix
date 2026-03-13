@@ -6,7 +6,6 @@
       imports = with config.flake.modules.nixos; [
         minimal
         audio
-        screenshots
       ];
       environment.systemPackages = with pkgs; [
         ghostty
