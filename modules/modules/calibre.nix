@@ -1,6 +1,6 @@
-{ config, ... }:
+{ self, ... }:
 {
-  config.flake.modules = {
+  flake.modules = {
     nixos.calibre = {
       services.udisks2 = {
         enable = true;
@@ -8,6 +8,7 @@
       };
     };
     homeManager.calibre.programs.calibre = {
+      imports = [ self.flake.modules.nixos.calibre ]; # Note this does not work when using home-manager standalone.
       enable = true;
       plugins = [ ];
     };
