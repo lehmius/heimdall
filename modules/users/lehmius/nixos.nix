@@ -18,8 +18,12 @@
 
     nix.settings.trusted-users = [ config.flake.meta.users.lehmius.username ];
 
-    home-manager.users.${config.flake.meta.users.lehmius.username}.imports = with config.flake.modules.homeManager;[
-      lehmius
-    ];
+    home-manager.users.${config.flake.meta.users.lehmius.username} = { osConfig, ... }:
+    {
+      imports = with config.flake.modules.homeManager;[
+        lehmius
+      ];
+      home.stateVersion = osConfig.system.stateVersion;
+    };
   };
 }
