@@ -1,5 +1,6 @@
 { config, ... }:
 {
+  nixpkgs.config.allowUnfreePackages = [ "obsidian" ];
   flake.modules = {
     nixos.pc = { pkgs, ... }: {
       imports = with config.flake.modules.nixos; [
@@ -9,6 +10,7 @@
       environment.systemPackages = with pkgs; [
         ghostty
         grim
+        obsidian
         slurp
       ];
     };
