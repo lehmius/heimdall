@@ -7,6 +7,7 @@
 
       homeManager.minimal.imports = with config.flake.modules.homeManager; [
         git
+        xdg
       ];
     };
 }
