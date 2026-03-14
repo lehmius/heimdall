@@ -8,6 +8,7 @@
       framework
       gamedev
       lehmius
+      mangowc
     ];
 
     boot.loader.systemd-boot.enable = true;
@@ -28,10 +29,7 @@
     console.keyMap = "colemak";
 
     services = {
-      displayManager.gdm = {
-          enable = true;
-          wayland = true;
-      };
+      displayManager.ly.enable = true;
       desktopManager.gnome = {
           enable = true;
           extraGSettingsOverrides = ''
