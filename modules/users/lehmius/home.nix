@@ -6,6 +6,7 @@
       minimal
       programming
       ghostty
+      hyprland
     ];
     home = {
       username = config.flake.meta.users.lehmius.username;

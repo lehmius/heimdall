@@ -8,7 +8,6 @@
       framework
       gamedev
       lehmius
-      mangowc
     ];
 
     boot.loader.systemd-boot.enable = true;
