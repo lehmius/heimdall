@@ -1,12 +1,11 @@
 { config, ...}:
 {
-  flake.modules.homeManager.lehmius = { pkgs, ... }:
+  configurations.homeManager.lehmius.module = { pkgs, ... }:
   {
     imports = with config.flake.modules.homeManager; [
       minimal
       programming
       ghostty
-      hyprland
     ];
     home = {
       username = config.flake.meta.users.lehmius.username;
