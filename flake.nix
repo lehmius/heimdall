@@ -2,6 +2,7 @@
   description = "My NixOS configuration heimdall";
 
   nixConfig = {
+    extra-experimental-features = [ "pipe-operators" ];
     extra-substituters = [
       "https://cuda-maintainers.cachix.org"
     ];
