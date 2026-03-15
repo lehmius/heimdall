@@ -7,6 +7,7 @@
       pc
       framework
       gamedev
+      hyprland
       lehmius
     ];
 
