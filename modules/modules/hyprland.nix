@@ -13,6 +13,27 @@
     {
       options.hyprland = {
         enable = lib.mkEnableOption "Enable the hyprland wayland compositor.";
+        mod = lib.mkOption {
+          type = lib.types.str;
+          default = "SUPER";
+          description = ''
+            Sets the main modifier key used to initiate actions in hyprland.
+          '';
+        };
+        menu = lib.mkOption {
+          type = lib.types.str;
+          default = "rofi";
+          description = ''
+            Sets the application launcher for hyprland.
+          '';
+        };
+        terminal = lib.mkOption {
+          type = lib.types.str;
+          default = "ghostty";
+          description = ''
+            Sets the $terminal variable to use in the hyprland configuration.
+          '';
+        };
         # Tracks options of the home-manager module from hyprland itself.
         # See: https://github.com/hyprwm/Hyprland/blob/main/nix/module.nix
         plugins = lib.mkOption {
@@ -101,7 +122,13 @@
         wayland.windowManager.hyprland = {
           enable = cfg.enable;
           plugins = cfg.plugins;
-          settings = cfg.settings;
+          settings = {
+            "$mod" = cfg.mod;
+            "$terminal" = cfg.terminal;
+            "$menu" = cfg.menu;
+            "monitor" = "eDP-1, 2256x1504@60, 0x0, 1.17";
+            misc.disable_hyprland_logo = true;
+          } // cfg.settings;
           extraConfig = cfg.extraConfig;
         };
       };

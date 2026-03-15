@@ -8,8 +8,6 @@
     hyprland = {
       enable = true;
       settings = {
-        "$mod" = "SUPER";
-        "$menu" = "";
         bind =
         let
           # function by: https://github.com/mightyiam/infra/blob/2b6891c18991117975c6096c8b20810908ef427c/modules/window-manager/hyprland/window-management.nix#L6
@@ -26,12 +24,12 @@
         lib.concatLists [
           [
             "$mod, Q, killactive"
-            "$mod, RETURN, exec, ghostty"
+            "$mod, RETURN, exec, $terminal"
             "$mod, SPACE, exec, $menu"
             "$mod, B, exec, librewolf"
           ]
           (hjkl "$mod" (d: "movefocus, ${d}"))
-	  # workspace navigation by mightyiam: 
+	  # workspace navigation by mightyiam:
 	  # https://github.com/mightyiam/infra/blob/2b6891c18991117975c6096c8b20810908ef427c/modules/window-manager/hyprland/window-management.nix#L6
 	  (
 	    9
