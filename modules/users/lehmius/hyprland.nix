@@ -7,6 +7,7 @@
 
     hyprland = {
       enable = true;
+      terminal = "wezterm";
       settings = {
         bind =
         let

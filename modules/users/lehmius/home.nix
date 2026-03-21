@@ -5,7 +5,7 @@
     imports = with config.flake.modules.homeManager; [
       minimal
       programming
-      ghostty
+      wezterm
     ];
     home = {
       username = config.flake.meta.users.lehmius.username;
