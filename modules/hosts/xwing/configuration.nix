@@ -41,12 +41,13 @@
 
     services.printing.enable = true;
     environment.systemPackages = with pkgs; [
-        neovim
-        git
-        librewolf
-        signal-desktop
-        swaybg
-        anki-bin
+      anki-bin
+      neovim
+      git
+      librewolf
+      obs-studio
+      signal-desktop
+      swaybg
     ];
 
     system.stateVersion = "25.05";
