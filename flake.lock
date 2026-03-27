@@ -564,6 +564,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1773840656,
+        "narHash": "sha256-9tpvMGFteZnd3gRQZFlRCohVpqooygFuy9yjuyRL2C0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9cf7092bdd603554bd8b63c216e8943cf9b12512",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -597,7 +613,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
-        "vintagestory-nix": "vintagestory-nix"
+        "vintagestory-nix": "vintagestory-nix",
+        "wrapper-modules": "wrapper-modules"
       }
     },
     "scenefx": {
@@ -653,6 +670,24 @@
       "original": {
         "owner": "PierreBorine",
         "repo": "vintagestory-nix",
+        "type": "github"
+      }
+    },
+    "wrapper-modules": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1774538285,
+        "narHash": "sha256-KRDNQDEWjB2O5SRH/oUTzi34cNxlIT8sab0FK2uqZ2g=",
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "rev": "15d740b2bfc545189a569147da7718457c12758e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
         "type": "github"
       }
     },
