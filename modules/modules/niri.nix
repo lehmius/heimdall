@@ -17,7 +17,10 @@
           # (lib.getExe self'.packages.dankMaterialShell)
         ];
 
-        input.keyboard.xkb.layout = "colemak, de";
+        input.keyboard.xkb = {
+          layout = "us";
+          variant = "colemak";
+        };
         layout.gaps = 3;
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.wezterm;
