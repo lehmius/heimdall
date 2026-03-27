@@ -3,7 +3,11 @@
   config.flake.modules.nixos.minimal = {
     nix = {
       settings = {
-        experimental-features = [ "nix-command" "flakes" ];
+        experimental-features = [
+          "flakes"
+          "nix-command"
+          "pipe-operators"
+        ];
         trusted-users = [
           "root"
         ];
