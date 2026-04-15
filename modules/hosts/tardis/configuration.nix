@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, ...}:
+{ self, config, ...}:
 {
   configurations.nixos.tardis.module =
   { lib, pkgs, ... }:
@@ -12,6 +12,8 @@
       gaming
       programming
       lehmius
+    ] ++ [
+      self.nixosModules.nvidia-gpu
     ];
 
     # Bootloader.
@@ -50,17 +52,6 @@
           experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
         '';
       };
-    };
-
-    hardware.graphics.enable = true;
-    hardware.nvidia = {
-      modesetting.enable = true;
-      powerManagement = {
-        enable = false;
-        finegrained = false;
-      };
-      open = false;
-      nvidiaSettings = true;
     };
 
     # Enable CUPS to print documents.
