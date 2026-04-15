@@ -9,6 +9,7 @@
     imports = with config.flake.modules.nixos; [
       pc
       ai
+      art
       gaming
       programming
       lehmius
