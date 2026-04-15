@@ -1,4 +1,5 @@
 {
+  nixpkgs.config.allowUnfreePackages = [ "open-webui" ];
   flake.modules.nixos.ai = {
     services.open-webui = {
       enable = true;

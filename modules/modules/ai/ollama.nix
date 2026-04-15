@@ -1,5 +1,11 @@
 { config, ... }:
 {
+  nixpkgs.config.allowUnfreePackages = [
+    "cuda_cudart"
+    "cuda_nvcc"
+    "cuda_cccl"
+    "libcublas"
+  ];
   flake.modules.nixos.ai = { pkgs, ... }:
   {
     services.ollama = {

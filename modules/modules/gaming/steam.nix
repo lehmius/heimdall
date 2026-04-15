@@ -1,5 +1,9 @@
 { config, ... }:
 {
+  nixpkgs.config.allowUnfreePackages = [
+    "steam"
+    "steam-unwrapped"
+  ];
   flake.modules.nixos.steam = { pkgs, ... }:
   {
     environment.sessionVariables = {
