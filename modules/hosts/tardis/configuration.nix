@@ -69,7 +69,6 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       ausweisapp
-      davinci-resolve
       neovim
       librewolf
       anki-bin
