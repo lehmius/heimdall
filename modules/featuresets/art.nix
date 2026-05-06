@@ -6,7 +6,7 @@
     {
       environment.systemPackages = with pkgs; [
         blender
-        gimp2
+        # gimp2
         inkscape
         krita
         libresprite
@@ -17,7 +17,7 @@
     {
       home.packages = with pkgs; [
         blender
-        gimp2
+        # gimp2
         inkscape
         krita
         libresprite

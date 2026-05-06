@@ -2,7 +2,7 @@
 {
   flake.modules = {
     nixos.gaming.imports = with config.flake.modules.nixos; [
-      lutris
+      # lutris
       steam
       vintagestory
     ];
