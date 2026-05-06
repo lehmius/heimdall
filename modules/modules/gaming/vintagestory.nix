@@ -4,8 +4,10 @@
   flake.modules.nixos.vintagestory = { pkgs, ... }:
   {
     nixpkgs.overlays = [ inputs.vintagestory-nix.overlays.default ];
-    environment.systemPackages = with pkgs; [
-      vintagestoryPackages.latest
+    environment.systemPackages = [
+      (pkgs.vintagestoryPackages.latest.override {
+        waylandSupport = true;
+      })
     ];
   };
 }
