@@ -3,6 +3,7 @@
   nixpkgs.config.allowUnfreePackages = [
     "nvidia-x11"
     "nvidia-settings"
+    "nvidia-kernel-modules"
   ];
   flake.nixosModules.nvidia-gpu = {
     hardware.graphics.enable = true;
